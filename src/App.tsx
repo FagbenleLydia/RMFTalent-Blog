@@ -1,33 +1,32 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import TrustIndicators from './components/TrustIndicators';
-import ValueProposition from './components/ValueProposition';
-import Process from './components/Process';
-import TeamShowcase from './components/TeamShowcase';
-import Testimonials from './components/Testimonials';
-import Blog from './components/Blog';
-import FAQ from './components/FAQ';
-import CTA from './components/CTA';
-import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Packages from "./pages/Packages";
+import CaseStudies from "./pages/CaseStudies";
+import About from "./pages/About";
+import Blogs from "./pages/Blog";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <Hero />
-      <TrustIndicators />
-      <ValueProposition />
-      <Process />
-      <TeamShowcase />
-      <Testimonials />
-      <Blog />
-      <FAQ />
-      <CTA />
-      <ContactForm />
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/home/services" element={<Services />} />
+          <Route path="/home/packages" element={<Packages />} />
+          <Route path="/home/case-studies" element={<CaseStudies />} />
+          <Route path="/home/about" element={<About />} />
+          <Route path="/home/blogs" element={<Blogs />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

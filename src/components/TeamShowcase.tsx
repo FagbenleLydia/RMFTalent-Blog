@@ -24,7 +24,7 @@ const TeamShowcase: React.FC = () => {
       role: "Project Manager",
       experience: "3+ years experience",
       rating: 5.0,
-      image: "ray.png",
+      image: "/ray.png",
       bgGradient: "from-blue-400 to-blue-600",
     },
     {
@@ -32,7 +32,7 @@ const TeamShowcase: React.FC = () => {
       role: "Project Manager",
       experience: "3+ years experience",
       rating: 5.0,
-      image: "favor.png",
+      image: "/favor.png",
       bgGradient: "from-orange-400 to-orange-600",
     },
   ];

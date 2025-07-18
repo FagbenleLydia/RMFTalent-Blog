@@ -11,18 +11,31 @@ import {
 } from "lucide-react";
 
 const Footer: React.FC = () => {
+  const phoneNumber = "+2349039846793"; // Your WhatsApp number
+
+  const handleBookCall = () => {
+    // Create WhatsApp link
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, "")}`;
+    // Open in new tab
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <footer className="bg-[#150c2d] text-white relative z-10">
       <div className="max-w-screen-xl mx-auto px-6 pt-10 pb-8">
         {/* Top: Logo & Button */}
         <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-3xl font-extrabold leading-tight">RMF</h1>
-            <p className="text-sm tracking-widest text-gray-400 ml-1">
-              TALENTS
-            </p>
+          <div className="mt-2">
+            <img
+              src="/logos/rmflogo1.png"
+              alt="RMF Logo"
+              className="w-[72px] h-[45px]"
+            />
           </div>
-          <button className="bg-white text-gray-900 px-6 py-2 rounded-md font-semibold hover:bg-gray-200 transition">
+          <button
+            onClick={handleBookCall}
+            className="bg-white text-gray-900 px-6 py-2 rounded-md font-semibold hover:bg-gray-200 transition"
+          >
             Book a call
           </button>
         </div>
