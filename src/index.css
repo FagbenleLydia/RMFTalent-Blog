@@ -214,3 +214,41 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #7c3aed;
 }
+
+@layer utilities {
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-float-delay {
+    animation-delay: 1s;
+  }
+
+  .animate-float-delay-2 {
+    animation-delay: 2s;
+  }
+}

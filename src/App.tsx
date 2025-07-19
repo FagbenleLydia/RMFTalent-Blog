@@ -9,6 +9,7 @@ import Packages from "./pages/Packages";
 import CaseStudies from "./pages/CaseStudies";
 import About from "./pages/About";
 import Blogs from "./pages/Blog";
+import JoinRmfTalent from "./pages/JoinRmfTalent";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/home/case-studies" element={<CaseStudies />} />
           <Route path="/home/about" element={<About />} />
           <Route path="/home/blogs" element={<Blogs />} />
+          <Route path="/home/JoinRmf" element={<JoinRmfTalent />} />
           <Route path="/" element={<Home />} />
         </Routes>
         <Footer />

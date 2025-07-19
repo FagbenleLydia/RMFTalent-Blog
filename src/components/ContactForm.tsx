@@ -117,7 +117,7 @@ const ContactForm = () => {
     <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50 relative">
       {/* Success Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="fixed inset-0 backdrop-blur-[10px] bg-[#00000033] flex items-center justify-center z-50">
           <div className="bg-white rounded-2xl p-8 shadow-lg w-full max-w-md text-center relative">
             <button
               onClick={() => setShowModal(false)}

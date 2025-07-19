@@ -1,7 +1,16 @@
-import React from "react";
+import { Package } from "lucide-react";
+import CTA from "../components/CTA";
+import ContactForm from "../components/ContactForm";
+import RightPackage from "../components/RightPackage";
 
 const Packages = () => {
-  return <div>Packages</div>;
+  return (
+    <>
+      <RightPackage />
+      <CTA />
+      <ContactForm />
+    </>
+  );
 };
 
 export default Packages;

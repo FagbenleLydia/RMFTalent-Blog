@@ -1,7 +1,11 @@
-import React from "react";
+import CaseStudy from "../components/CaseStudy";
 
 const CaseStudies = () => {
-  return <div>CaseStudies</div>;
+  return (
+    <>
+      <CaseStudy />
+    </>
+  );
 };
 
 export default CaseStudies;

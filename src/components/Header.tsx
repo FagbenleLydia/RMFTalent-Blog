@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link, useLocation } from "react-router-dom"; // 👈 useLocation
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const phoneNumber = "+2349039846793"; // Your WhatsApp number
+  const phoneNumber = "+2349039846793";
+
+  const { pathname } = useLocation();
+
+  const isActive = (path: string) =>
+    pathname === path || pathname.startsWith(path + "/");
 
   const handleBookCall = () => {
-    // Create WhatsApp link
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, "")}`;
-    // Open in new tab
     window.open(whatsappUrl, "_blank");
   };
 
@@ -17,7 +20,7 @@ const Header: React.FC = () => {
     <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo - Now wrapped with Link */}
+          {/* Logo */}
           <Link to="/home" className="flex items-center space-x-2">
             <div className="w-[72px] h-[45px]">
               <img
@@ -28,35 +31,55 @@ const Header: React.FC = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation - Updated links */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-9">
             <Link
               to="/home/services"
-              className="text-gray-500 hover:text-purple-600 transition-colors font-light"
+              className={`transition-colors font-light ${
+                isActive("/home/services")
+                  ? "text-purple-600 font-medium"
+                  : "text-gray-500 hover:text-purple-600"
+              }`}
             >
               Services
             </Link>
             <Link
               to="/home/packages"
-              className="text-gray-500 hover:text-[#AD75FF] transition-colors font-light"
+              className={`transition-colors font-light ${
+                isActive("/home/packages")
+                  ? "text-purple-600 font-medium"
+                  : "text-gray-500 hover:text-purple-600"
+              }`}
             >
               Product packages
             </Link>
             <Link
               to="/home/case-studies"
-              className="text-gray-500 hover:text-[#AD75FF] transition-colors font-light"
+              className={`transition-colors font-light ${
+                isActive("/home/case-studies")
+                  ? "text-purple-600 font-medium"
+                  : "text-gray-500 hover:text-purple-600"
+              }`}
             >
               Case studies
             </Link>
             <Link
               to="/home/about"
-              className="text-gray-500 hover:text-[#AD75FF] transition-colors font-light"
+              className={`transition-colors font-light ${
+                isActive("/home/about")
+                  ? "text-purple-600 font-medium"
+                  : "text-gray-500 hover:text-purple-600"
+              }`}
             >
               About
             </Link>
             <Link
               to="/home/blogs"
-              className="text-gray-700 hover:text-[#AD75FF] transition-colors font-light"
+              className={`transition-colors font-light ${
+                isActive("/home/blogs")
+                  ? "text-purple-600 font-medium"
+                  : "text-gray-500 hover:text-purple-600"
+              }`}
             >
               Blogs
             </Link>
@@ -65,8 +88,12 @@ const Header: React.FC = () => {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link
-              to="/home#contact-form"
-              className="px-4 py-2 text-gray-500 border border-[#211743] rounded-lg hover:bg-gray-50 font-light"
+              to="/home/JoinRmf"
+              className={`px-4 py-2 border rounded-lg font-light transition-colors ${
+                isActive("/home/JoinRmf")
+                  ? "text-purple-600 border-purple-600 bg-purple-50"
+                  : "text-gray-500 border-[#211743] hover:bg-gray-50"
+              }`}
             >
               Join RMFTalent
             </Link>
@@ -94,67 +121,88 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Menu - Updated links */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden mt-4 py-4 border-t border-gray-200 animate-fade-in">
             <nav className="flex flex-col space-y-4">
               <Link
                 to="/home/services"
-                className="text-gray-700 hover:text-purple-600 transition-colors font-medium py-2 px-4 rounded-lg hover:bg-purple-50"
+                className={`py-2 px-4 rounded-lg font-medium transition-colors ${
+                  isActive("/home/services")
+                    ? "bg-purple-100 text-purple-700"
+                    : "text-gray-700 hover:text-purple-600 hover:bg-purple-50"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
                 to="/home/packages"
-                className="text-gray-700 hover:text-purple-600 transition-colors font-medium py-2 px-4 rounded-lg hover:bg-purple-50"
+                className={`py-2 px-4 rounded-lg font-medium transition-colors ${
+                  isActive("/home/packages")
+                    ? "bg-purple-100 text-purple-700"
+                    : "text-gray-700 hover:text-purple-600 hover:bg-purple-50"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Product packages
               </Link>
               <Link
                 to="/home/case-studies"
-                className="text-gray-700 hover:text-purple-600 transition-colors font-medium py-2 px-4 rounded-lg hover:bg-purple-50"
+                className={`py-2 px-4 rounded-lg font-medium transition-colors ${
+                  isActive("/home/case-studies")
+                    ? "bg-purple-100 text-purple-700"
+                    : "text-gray-700 hover:text-purple-600 hover:bg-purple-50"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Case studies
               </Link>
               <Link
                 to="/home/about"
-                className="text-gray-700 hover:text-purple-600 transition-colors font-medium py-2 px-4 rounded-lg hover:bg-purple-50"
+                className={`py-2 px-4 rounded-lg font-medium transition-colors ${
+                  isActive("/home/about")
+                    ? "bg-purple-100 text-purple-700"
+                    : "text-gray-700 hover:text-purple-600 hover:bg-purple-50"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 to="/home/blogs"
-                className="text-gray-700 hover:text-purple-600 transition-colors font-medium py-2 px-4 rounded-lg hover:bg-purple-50"
+                className={`py-2 px-4 rounded-lg font-medium transition-colors ${
+                  isActive("/home/blogs")
+                    ? "bg-purple-100 text-purple-700"
+                    : "text-gray-700 hover:text-purple-600 hover:bg-purple-50"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blogs
               </Link>
+              <Link
+                to="/home/JoinRmf"
+                onClick={() => setIsMenuOpen(false)}
+                className={`py-2 px-4 rounded-lg font-medium transition-colors ${
+                  isActive("/home/JoinRmf")
+                    ? "bg-purple-100 text-purple-700"
+                    : "text-gray-700 hover:text-purple-600 hover:bg-purple-50"
+                }`}
+              >
+                Join RMFTalent
+              </Link>
 
-              {/* Mobile CTAs */}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
-                <Link
-                  to="/home#contact-form"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="w-full px-6 py-3 text-purple-600 border border-purple-600 rounded-lg hover:bg-purple-50 transition-colors font-medium text-center"
-                >
-                  Join RMFTalent
-                </Link>
-
-                <button
-                  onClick={() => {
-                    handleBookCall();
-                    setIsMenuOpen(false);
-                  }}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all font-medium"
-                >
-                  <span className="">Book a call</span>
-                  <span>&gt;&gt;</span>
-                </button>
-              </div>
+              {/* Book call */}
+              <button
+                onClick={() => {
+                  handleBookCall();
+                  setIsMenuOpen(false);
+                }}
+                className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all font-medium"
+              >
+                <span>Book a call</span>
+                <span>&gt;&gt;</span>
+              </button>
             </nav>
           </div>
         )}

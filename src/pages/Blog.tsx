@@ -1,7 +1,11 @@
-import React from "react";
+import BlogGrid from "../components/BlogGrid";
 
 const Blog = () => {
-  return <div>Blog</div>;
+  return (
+    <>
+      <BlogGrid />
+    </>
+  );
 };
 
 export default Blog;
