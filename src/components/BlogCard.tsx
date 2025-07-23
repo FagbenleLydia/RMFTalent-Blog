@@ -10,15 +10,15 @@ interface BlogCardProps {
 const BlogCard: React.FC<BlogCardProps> = ({ article, onClick }) => {
   return (
     <div
-      className="bg-white rounded-2xl overflow-hidden cursor-pointer group"
       onClick={onClick}
+      className="bg-white rounded-2xl overflow-hidden cursor-pointer group shadow-sm transition-shadow hover:shadow-lg flex flex-col h-full min-h-[460px]"
     >
-      {/* Image Container */}
-      <div className="relative overflow-hidden">
+      {/* Image */}
+      <div className="relative w-full overflow-hidden rounded-t-2xl">
         <img
           src={article.image}
           alt={article.title}
-          className="w-full h-56 object-cover"
+          className="w-full h-48 sm:h-56 object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
         />
 
         {/* Category Badge */}
@@ -30,24 +30,24 @@ const BlogCard: React.FC<BlogCardProps> = ({ article, onClick }) => {
       </div>
 
       {/* Content */}
-      <div className="p-6 pb-8">
+      <div className="flex flex-col flex-grow p-6 pb-8">
         {/* Date */}
-        <p className="text-sm text-slate-500 mb-4 font-medium">
+        <p className="text-sm text-slate-500 mb-2 font-medium">
           {article.date}
         </p>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-slate-900 mb-4 leading-tight">
+        <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight line-clamp-2">
           {article.title}
         </h3>
 
         {/* Description */}
-        <p className="text-slate-600 mb-6 leading-relaxed text-sm">
+        <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
           {article.description}
         </p>
 
-        {/* Read Article Link */}
-        <div className="flex items-center text-blue-600 font-medium text-sm">
+        {/* Read More Link */}
+        <div className="mt-auto flex items-center text-blue-600 font-medium text-sm">
           <span className="mr-2">Read Article</span>
           <ArrowRight className="w-4 h-4" />
         </div>

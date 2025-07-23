@@ -53,12 +53,12 @@ const ScrollSection: React.FC<ScrollSectionProps> = ({
 
 function MainSection() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-6 py-20">
         {/* Main Header */}
-        <div className="text-center mb-32">
+        <div className="text-center mb-10">
           <ScrollSection>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto">
+            <h1 className="text-[26px] md:text-[36px] text-[#211743] font-bold leading-tight max-w-4xl mx-auto">
               We are redefining how businesses build their engineering team
             </h1>
           </ScrollSection>
@@ -69,9 +69,9 @@ function MainSection() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Image */}
             <div className="relative lg:sticky lg:top-20 pt-6">
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 shadow-2xl">
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-400 via-purple-500 to-[#AD75FF] shadow-2xl">
                 <img
-                  src="/TopTalent.png"
+                  src="/TopTalent1.png"
                   alt="Professional team member"
                   className="w-full h-auto md:h-[500px] lg:h-[700px] object-cover"
                 />
@@ -79,11 +79,13 @@ function MainSection() {
             </div>
 
             {/* Content */}
-            <div className="space-y-16">
+            <div className="md:mt-4 space-y-16">
               <ScrollSection>
                 <div className="space-y-6 ml-0 md:ml-6 lg:ml-0 xl:-ml-10 2xl:-ml-20">
-                  <h2 className="text-4xl font-bold">Talent acquisition</h2>
-                  <p className="text-lg leading-relaxed">
+                  <h2 className="text-[32px] text-[#211743] font-bold">
+                    Talent acquisition
+                  </h2>
+                  <p className="text-[16px] text-[#393642] leading-relaxed">
                     Find and onboard startup-ready tech talent, fast. We handle
                     the end-to-end sourcing, vetting, and onboarding of talent;
                     fully aligned with your tech stack, budget, and startup
@@ -112,8 +114,12 @@ function MainSection() {
               ].map((item, idx) => (
                 <ScrollSection highlightLine key={idx}>
                   <div className="space-y-4">
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="text-base leading-relaxed">{item.body}</p>
+                    <h3 className="text-[24px] text-[#211743] font-bold">
+                      {item.title}
+                    </h3>
+                    <p className="text-[16px] text-[#393642] leading-relaxed">
+                      {item.body}
+                    </p>
                   </div>
                 </ScrollSection>
               ))}
@@ -126,9 +132,9 @@ function MainSection() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Image on right for desktop */}
             <div className="relative order-1 lg:order-2 lg:sticky lg:top-20">
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 shadow-2xl">
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-400 via-purple-500 to-[#AD75FF] shadow-2xl">
                 <img
-                  src="/TopTalent.png"
+                  src="/TopTalent2.png"
                   alt="Product Launch"
                   className="w-full h-auto md:h-[500px] lg:h-[700px] object-cover"
                 />
@@ -139,10 +145,10 @@ function MainSection() {
             <div className="space-y-12 lg:space-y-16 order-2 lg:order-1">
               <ScrollSection>
                 <div className="space-y-6 ml-0 md:ml-6 lg:ml-0 xl:-ml-10 2xl:-ml-20">
-                  <h2 className="text-4xl font-bold">
+                  <h2 className="text-[32px] text-[#211743] font-bold">
                     Product Launch (MVP Delivery)
                   </h2>
-                  <p className="text-lg leading-relaxed">
+                  <p className="text-[16px] text-[#393642] leading-relaxed">
                     Launch your MVP in 30 days with a squad built to ship, not
                     just code. We assemble a focused, expert-led team to bring
                     your idea to life. Fast timelines, full visibility, and a
@@ -171,8 +177,12 @@ function MainSection() {
               ].map((item, idx) => (
                 <ScrollSection highlightLine key={idx}>
                   <div className="space-y-4">
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="text-base leading-relaxed">{item.body}</p>
+                    <h3 className="text-[24px] text-[#211743] font-bold">
+                      {item.title}
+                    </h3>
+                    <p className="text-[16px] text-[#393642] leading-relaxed">
+                      {item.body}
+                    </p>
                   </div>
                 </ScrollSection>
               ))}

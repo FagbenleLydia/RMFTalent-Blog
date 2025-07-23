@@ -9,10 +9,10 @@ const TrustIndicators: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 bg-white overflow-hidden">
+    <section className="py-12 bg-[#FAFAFA] overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-[#1A1443]">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#211743]">
             Trusted by fast growing brands{" "}
             <span className="inline-block">🚀</span>
           </h2>

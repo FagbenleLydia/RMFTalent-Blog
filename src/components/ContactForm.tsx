@@ -114,7 +114,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50 relative">
+    <section className="py-20 bg-[#FAFAFA] relative">
       {/* Success Modal */}
       {showModal && (
         <div className="fixed inset-0 backdrop-blur-[10px] bg-[#00000033] flex items-center justify-center z-50">
@@ -148,7 +148,7 @@ const ContactForm = () => {
           <div className="hidden lg:flex">
             <div
               className="w-full min-h-[700px] bg-no-repeat bg-contain bg-center"
-              style={{ backgroundImage: "url('/stella.png')" }}
+              style={{ backgroundImage: "url('/stella1.png')" }}
             ></div>
           </div>
 
@@ -298,7 +298,7 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white py-4 rounded-lg font-semibold hover:from-purple-600 hover:to-purple-700 transition transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+                  className="w-full bg-[#AD75FF] from-purple-500 to-purple-600 text-white py-4 rounded-lg font-semibold hover:from-purple-600 hover:to-purple-700 transition transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -308,7 +308,7 @@ const ContactForm = () => {
                   ) : (
                     <>
                       <span>Send a message</span>
-                      <span>→</span>
+                      <span className="px-2 mt-1">&gt;&gt;</span>
                     </>
                   )}
                 </button>

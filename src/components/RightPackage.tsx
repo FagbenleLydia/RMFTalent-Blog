@@ -1,8 +1,12 @@
 import React from "react";
-
+const phoneNumber = "+2349039846793";
+const handleBookCall = () => {
+  const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, "")}`;
+  window.open(whatsappUrl, "_blank");
+};
 export default function RightPackage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FAFAFA]">
       {/* Header Section */}
       <div className="text-center py-16 px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -15,8 +19,12 @@ export default function RightPackage() {
           <br />
           specific product launch issues, there's a plan for you.
         </p>
-        <button className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-          Book a call →
+        <button
+          onClick={handleBookCall}
+          className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+        >
+          <span className="mr-4 text-[16px]">Book a call</span>
+          <span className="mt-1">&gt;&gt;</span>
         </button>
       </div>
 

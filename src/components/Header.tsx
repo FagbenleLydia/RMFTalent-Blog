@@ -17,7 +17,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+    <header className="bg-[#FAFAFA] backdrop-blur-sm shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -32,13 +32,13 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-9">
+          <nav className="hidden text-[14px] lg:flex items-center space-x-9">
             <Link
               to="/home/services"
               className={`transition-colors font-light ${
                 isActive("/home/services")
-                  ? "text-purple-600 font-medium"
-                  : "text-gray-500 hover:text-purple-600"
+                  ? "text-[#AD75FF] font-medium"
+                  : "text-[#211743] hover:text-[#AD75FF]"
               }`}
             >
               Services
@@ -47,8 +47,8 @@ const Header: React.FC = () => {
               to="/home/packages"
               className={`transition-colors font-light ${
                 isActive("/home/packages")
-                  ? "text-purple-600 font-medium"
-                  : "text-gray-500 hover:text-purple-600"
+                  ? "text-[#AD75FF] font-medium"
+                  : "text-[#211743] hover:text-[#AD75FF]"
               }`}
             >
               Product packages
@@ -57,8 +57,8 @@ const Header: React.FC = () => {
               to="/home/case-studies"
               className={`transition-colors font-light ${
                 isActive("/home/case-studies")
-                  ? "text-purple-600 font-medium"
-                  : "text-gray-500 hover:text-purple-600"
+                  ? "text-[#AD75FF] font-medium"
+                  : "text-[#211743] hover:text-[#AD75FF]"
               }`}
             >
               Case studies
@@ -67,8 +67,8 @@ const Header: React.FC = () => {
               to="/home/about"
               className={`transition-colors font-light ${
                 isActive("/home/about")
-                  ? "text-purple-600 font-medium"
-                  : "text-gray-500 hover:text-purple-600"
+                  ? "text-[#AD75FF] font-medium"
+                  : "text-[#211743] hover:text-[#AD75FF]"
               }`}
             >
               About
@@ -77,8 +77,8 @@ const Header: React.FC = () => {
               to="/home/blogs"
               className={`transition-colors font-light ${
                 isActive("/home/blogs")
-                  ? "text-purple-600 font-medium"
-                  : "text-gray-500 hover:text-purple-600"
+                  ? "text-[#AD75FF] font-medium"
+                  : "text-[#211743] hover:text-[#AD75FF]"
               }`}
             >
               Blogs
@@ -86,13 +86,13 @@ const Header: React.FC = () => {
           </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="hidden text-[14px] lg:flex items-center space-x-4">
             <Link
               to="/home/JoinRmf"
               className={`px-4 py-2 border rounded-lg font-light transition-colors ${
                 isActive("/home/JoinRmf")
-                  ? "text-purple-600 border-purple-600 bg-purple-50"
-                  : "text-gray-500 border-[#211743] hover:bg-gray-50"
+                  ? "text-[#AD75FF] border-[#211743] bg-purple-50"
+                  : "text-[#211743] border-[#211743] hover:bg-gray-100"
               }`}
             >
               Join RMFTalent
@@ -103,7 +103,7 @@ const Header: React.FC = () => {
               className="min-w-[140px] sm:min-w-[150px] px-2 py-2.5 bg-[#AD75FF] text-white rounded-lg transition-all transform hover:scale-105 font-light"
             >
               <span className="mr-3">Book a call</span>
-              <span>&gt;&gt;</span>
+              <span className="mt-1">&gt;&gt;</span>
             </button>
           </div>
 

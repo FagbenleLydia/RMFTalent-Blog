@@ -1,4 +1,6 @@
 import React from "react";
+import { SiTiktok } from "react-icons/si";
+
 import {
   Facebook,
   X,
@@ -11,17 +13,30 @@ import {
 } from "lucide-react";
 
 const Footer: React.FC = () => {
-  const phoneNumber = "+2349039846793"; // Your WhatsApp number
+  const phoneNumber = "+2349039846793";
 
   const handleBookCall = () => {
-    // Create WhatsApp link
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, "")}`;
-    // Open in new tab
     window.open(whatsappUrl, "_blank");
   };
 
+  const socialLinks = [
+    // { Icon: Facebook, href: "https://facebook.com/rmftalents" },
+    { Icon: X, href: "https://x.com/rmftalents?s=21" },
+    // { Icon: Linkedin, href: "https://linkedin.com/company/rmftalents" },
+    {
+      Icon: SiTiktok,
+      href: "https://www.tiktok.com/@rmf_talents?_t=ZM-8wP5JdyfqUQ&_r=1",
+    },
+    {
+      Icon: Instagram,
+      href: "https://www.instagram.com/rmf_talents?igsh=dWJqYmVseHBmM293",
+    },
+    // { Icon: Music2, href: "#" },
+  ];
+
   return (
-    <footer className="bg-[#150c2d] text-white relative z-10">
+    <footer className="bg-[#211743] text-white relative z-10">
       <div className="max-w-screen-xl mx-auto px-6 pt-10 pb-8">
         {/* Top: Logo & Button */}
         <div className="flex justify-between items-center mb-8">
@@ -50,16 +65,16 @@ const Footer: React.FC = () => {
             <h4 className="font-semibold mb-4 text-white">Quick links</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <a href="#">Home</a>
+                <a href="/home">Home</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="/home/services">Services</a>
               </li>
               <li>
-                <a href="#">Case Studies</a>
+                <a href="/home/case-studies">Case Studies</a>
               </li>
               <li>
-                <a href="#">About RMF</a>
+                <a href="/home/about">About RMF</a>
               </li>
             </ul>
           </div>
@@ -69,16 +84,21 @@ const Footer: React.FC = () => {
             <h4 className="font-semibold mb-4 text-white">Resources</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>
-                <a href="#">Join RMFTalents</a>
+                <a
+                  href="/home/JoinRmf"
+                  className="text-left text-sm text-gray-300 hover:text-white block"
+                >
+                  Join RMFTalents
+                </a>
               </li>
               <li>
-                <a href="#">Client Stories</a>
+                <a href="/home/about">Client Stories</a>
               </li>
               <li>
-                <a href="#">Talent Stories</a>
+                <a href="/home/about">Talent Stories</a>
               </li>
               <li>
-                <a href="#">Blogs</a>
+                <a href="/home/blogs">Blogs</a>
               </li>
             </ul>
           </div>
@@ -102,17 +122,16 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Follow Us */}
-          <div className="flex flex-col items-end space-y-3">
-            {/* Right-aligned title */}
-            <h4 className="text-white text-[16px] font-semibold">Follow us</h4>
-
-            {/* Centered icons below text */}
+          {/* Follow Us (now aligned in grid like others) */}
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Follow us</h4>
             <div className="flex items-center gap-3">
-              {[Facebook, X, Linkedin, Instagram, Music2].map((Icon, i) => (
+              {socialLinks.map(({ Icon, href }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 border border-white/30 rounded-full flex items-center justify-center hover:bg-white/10 transition"
                 >
                   <Icon className="w-4 h-4 text-white" strokeWidth={1.5} />

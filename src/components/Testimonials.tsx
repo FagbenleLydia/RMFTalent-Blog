@@ -52,16 +52,16 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 overflow-hidden">
+    <section className="py-20 bg-[#FAFAFA] overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="text-purple-600 font-semibold text-sm uppercase tracking-wide">
+        <div className="text-center mb-12">
+          <span className="text-[#AD75FF] font-semibold text-[14px] uppercase tracking-wide">
             TESTIMONIALS
           </span>
-          <h2 className="text-4xl font-bold text-gray-900 mt-4 mb-6 max-w-4xl mx-auto leading-tight">
+          <h2 className="text-[32px] font-bold text-[#211743] mt-2 mb-4 max-w-4xl mx-auto leading-tight">
             What our clients and talents Say <br /> about RMFTalents ecosystem
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[16px] text-[#393642] max-w-2xl mx-auto leading-relaxed">
             Explore the impact of RMF through testimonials from both
             <br /> our top talent and the businesses we've helped scale.
           </p>
@@ -81,7 +81,7 @@ const Testimonials: React.FC = () => {
                   <div key={index} className="flex-shrink-0 w-96">
                     <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full">
                       <div className="mb-6">
-                        <p className="text-gray-700 text-base leading-relaxed font-medium">
+                        <p className="!text-[#211743] text-[14px] leading-relaxed">
                           "{testimonial.text}"
                         </p>
                       </div>
@@ -95,10 +95,10 @@ const Testimonials: React.FC = () => {
                           />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900 text-base">
+                          <p className="font-semibold text-[#211743] text-[14px]">
                             {testimonial.name}
                           </p>
-                          <p className="text-gray-600 text-sm">
+                          <p className="text-[#393642] text-[14px]">
                             {testimonial.role}
                           </p>
                         </div>
@@ -123,7 +123,7 @@ const Testimonials: React.FC = () => {
                   <div key={index} className="flex-shrink-0 w-96">
                     <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full">
                       <div className="mb-6">
-                        <p className="text-gray-700 text-base leading-relaxed font-medium">
+                        <p className="!text-[#211743] text-[14px] leading-relaxed">
                           "{testimonial.text}"
                         </p>
                       </div>
@@ -137,10 +137,10 @@ const Testimonials: React.FC = () => {
                           />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900 text-base">
+                          <p className="font-semibold text-[#211743] text-[14px]">
                             {testimonial.name}
                           </p>
-                          <p className="text-gray-600 text-sm">
+                          <p className="text-[#393642] text-[14px]">
                             {testimonial.role}
                           </p>
                         </div>

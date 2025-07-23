@@ -37,46 +37,47 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#FAFAFA]">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Frequently Asked Questions
+            <h2 className="text-[32px] font-bold text-[#211743] mb-4">
+              Frequently Asked <br /> Questions
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Got questions about RMFTalent? We've compiled detailed answers to
-              the most pressing questions to help you get started.
+            <p className="text-[16px] text-[#393642] leading-relaxed">
+              Got questions about RMFTalent? We've compiled <br /> detailed
+              answers to the most pressing questions to <br />
+              help you get started.
             </p>
           </div>
 
           {/* Right Content - FAQ Items */}
-          <div className="space-y-4">
+          <div className="space-y-2">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                className="rounded-lg overflow-hidden hover:shadow-md transition-shadow"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
+                  className="w-full px-6 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                 >
-                  <span className="font-semibold text-gray-900">
+                  <span className="text-[18px] text-[#211743]">
                     {faq.question}
                   </span>
-                  <span className="w-8 h-8 rounded-full border border-[#393642] bg-white flex items-center justify-center">
+                  <span className="w-8 h-8 rounded-full border border-[#211743]  flex items-center justify-center">
                     {openIndex === index ? (
-                      <ChevronUp className="w-4 h-4 text-[#393642]" />
+                      <ChevronUp className="w-4 h-4 text-[#211743]" />
                     ) : (
-                      <ChevronDown className="w-4 h-4 text-[#393642]" />
+                      <ChevronDown className="w-4 h-4 text-[#211743]" />
                     )}
                   </span>
                 </button>
 
                 {openIndex === index && (
                   <div className="px-6 pb-4 animate-fade-in">
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-[#393642] text-[14px] leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>

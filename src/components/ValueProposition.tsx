@@ -2,12 +2,12 @@ import React from "react";
 
 const ValueProposition: React.FC = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#FAFAFA]">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           {/* Label */}
           <div className="text-center lg:text-left mb-2">
-            <span className="text-purple-500 font-medium text-sm uppercase tracking-wide block">
+            <span className="text-[#AD75FF] font-medium text-[14px] uppercase tracking-wide block">
               UNIQUE VALUE
             </span>
           </div>
@@ -16,7 +16,7 @@ const ValueProposition: React.FC = () => {
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-0 mb-16">
             {/* Left: Heading */}
             <div className="max-w-xl text-center lg:text-left">
-              <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[32px] xl:text-5xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[32px]  font-bold text-[#211743] leading-tight">
                 <span className="whitespace-nowrap">
                   Build faster with pre-vetted
                 </span>
@@ -49,10 +49,10 @@ const ValueProposition: React.FC = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-[20px] font-bold text-[#211743] mb-2">
                 Hire quickly
               </h3>
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base break-words">
+              <p className="text-[#393642] leading-relaxed text-[14px] sm:text-[14px] break-words">
                 Hire in under 48 hours. We offer flexible engagements from
                 hourly to full-time.
               </p>
@@ -67,10 +67,10 @@ const ValueProposition: React.FC = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-[20px] font-bold text-[#211743] mb-2">
                 The top 1%
               </h3>
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base break-words">
+              <p className="text-[#393642] leading-relaxed text-[14px] sm:text-[14px] break-words">
                 Every talent is rigorously tested and vetted. Our selective
                 process leads to a 98% trial-to-hire success rate.
               </p>
@@ -85,10 +85,10 @@ const ValueProposition: React.FC = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-[20px] font-bold text-[#211743] mb-2">
                 Highly professional
               </h3>
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base break-words">
+              <p className="text-[#393642] leading-relaxed text-[14px] sm:text-[14px] break-words">
                 Every talent in our network embodies the highest levels of
                 integrity, professionalism, and communication.
               </p>

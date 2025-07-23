@@ -28,7 +28,10 @@ const testimonials = [
 const TestimonialSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showOverlay, setShowOverlay] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const maxDots = 6;
 
@@ -55,6 +58,16 @@ const TestimonialSection: React.FC = () => {
     setShowOverlay(true);
   };
 
+  const formatTime = (seconds: number) => {
+    const m = Math.floor(seconds / 60)
+      .toString()
+      .padStart(2, "0");
+    const s = Math.floor(seconds % 60)
+      .toString()
+      .padStart(2, "0");
+    return `${m}:${s}`;
+  };
+
   const nextTestimonial = () => {
     if (currentTestimonial < testimonials.length - 1) {
       setCurrentTestimonial((prev) => prev + 1);
@@ -70,21 +83,20 @@ const TestimonialSection: React.FC = () => {
   const current = testimonials[currentTestimonial];
 
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-[#FAFAFA]">
       <div className="max-w-6xl mx-auto">
-        {/* Apply border, shadow, and rounded ONLY on lg and up */}
-        <div className="lg:rounded-2xl lg:border lg:border-gray-200 lg:shadow-md lg:p-10 p-0">
+        <div className="lg:rounded-2xl lg:border lg:border-gray-200 lg:p-10 p-0">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-stretch h-full">
             {/* Left Column */}
             <div className="flex-1 flex flex-col justify-between">
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                <h2 className="text-[26px] sm:text-[26px] md:text-[34px] font-bold text-[#211743] leading-tight mb-4">
                   Real stories from
                   <br />
                   RMFTalents
                 </h2>
 
-                <blockquote className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed italic min-h-[96px]">
+                <blockquote className="text-[16px] sm:text-[16px] md:text-[15px] text-[#211743] leading-relaxed italic min-h-[96px]">
                   "{current.quote}"
                 </blockquote>
 
@@ -159,14 +171,24 @@ const TestimonialSection: React.FC = () => {
 
             {/* Right Column (Video) */}
             <div className="flex-1 flex flex-col justify-between">
-              <div className="relative w-full h-full bg-gray-200 overflow-hidden rounded-none lg:rounded-2xl shadow-none lg:shadow-lg">
+              <div
+                className="relative w-full h-full min-h-[300px] bg-black overflow-hidden rounded-none lg:rounded-2xl shadow-none lg:shadow-lg"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
                 <video
                   ref={videoRef}
-                  className="w-full h-full object-cover cursor-pointer"
+                  className="absolute inset-0 w-full h-full object-contain bg-black"
                   poster="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  preload="none"
+                  preload="metadata"
                   controls={false}
                   onClick={handlePlayClick}
+                  onLoadedMetadata={(e) =>
+                    setDuration(e.currentTarget.duration)
+                  }
+                  onTimeUpdate={(e) =>
+                    setCurrentTime(e.currentTarget.currentTime)
+                  }
                   onPlay={() => {
                     setIsPlaying(true);
                     setShowOverlay(false);
@@ -176,25 +198,60 @@ const TestimonialSection: React.FC = () => {
                     setShowOverlay(true);
                   }}
                 >
-                  <source
-                    src="https://www.w3schools.com/html/mov_bbb.mp4"
-                    type="video/mp4"
-                  />
+                  <source src="/your-video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
 
+                {/* Overlay Play Button */}
                 {showOverlay && (
                   <div
-                    className="absolute inset-0 flex items-center justify-center"
+                    className="absolute inset-0 flex items-center justify-center bg-black/10"
                     onClick={handlePlayClick}
                   >
-                    <button className="w-16 h-16 lg:w-20 lg:h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-100 transition-all duration-300 hover:scale-110">
+                    <button className="w-16 h-16 lg:w-20 lg:h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
                       {isPlaying ? (
-                        <Pause className="w-6 h-6 lg:w-8 lg:h-8 text-gray-800" />
+                        <Pause className="w-7 h-7 text-gray-800" />
                       ) : (
-                        <Play className="w-6 h-6 lg:w-8 lg:h-8 text-gray-800 ml-1" />
+                        <Play className="w-7 h-7 text-gray-800 ml-1" />
                       )}
                     </button>
+                  </div>
+                )}
+
+                {/* VLC-style Bottom Bar: show only if paused or hovered while playing */}
+                {(isHovered || !isPlaying) && (
+                  <div className="absolute bottom-0 w-full bg-black/50 px-4 py-2 flex items-center justify-between text-white text-sm backdrop-blur transition-opacity duration-300">
+                    <div className="flex items-center gap-2">
+                      <button onClick={handlePlayClick}>
+                        {isPlaying ? (
+                          <Pause className="w-4 h-4" />
+                        ) : (
+                          <Play className="w-4 h-4" />
+                        )}
+                      </button>
+                      <span>{formatTime(currentTime)}</span>
+                    </div>
+                    <div
+                      className="flex-1 mx-4 h-1 bg-white/30 rounded overflow-hidden cursor-pointer relative group"
+                      onClick={(e) => {
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const clickX = e.clientX - rect.left;
+                        const percent = clickX / rect.width;
+                        const newTime = duration * percent;
+                        if (videoRef.current) {
+                          videoRef.current.currentTime = newTime;
+                          setCurrentTime(newTime);
+                        }
+                      }}
+                    >
+                      <div
+                        className="h-full bg-purple-500 transition-all duration-300"
+                        style={{
+                          width: `${(currentTime / duration) * 100 || 0}%`,
+                        }}
+                      />
+                    </div>
+                    <span>{formatTime(duration)}</span>
                   </div>
                 )}
               </div>

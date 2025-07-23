@@ -10,11 +10,13 @@ import CaseStudies from "./pages/CaseStudies";
 import About from "./pages/About";
 import Blogs from "./pages/Blog";
 import JoinRmfTalent from "./pages/JoinRmfTalent";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white">
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/home" element={<Home />} />
