@@ -19,7 +19,7 @@ const TeamShowcase: React.FC = () => {
     },
     {
       name: "Lydia Fagbenle",
-      role: "Front-End Developer",
+      role: "Software Engineer",
       experience: "3+ years experience",
       rating: 5.0,
       image: "/lydia.png",

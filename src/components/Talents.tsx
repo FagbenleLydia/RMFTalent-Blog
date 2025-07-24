@@ -8,7 +8,7 @@ const handleBookCall = () => {
 
 const talents = [
   {
-    title: "Software Developer",
+    title: "Content Creator",
     img: "/stellat.png",
   },
   {
@@ -16,31 +16,31 @@ const talents = [
     img: "/stellat2.png",
   },
   {
-    title: "Back-end Developer",
+    title: "User Interface Designer",
     img: "/olat.png",
   },
   {
-    title: "Product Designer",
+    title: "Project Manager",
     img: "/debbiet.png",
   },
   {
-    title: "Mobile Developer",
+    title: "Software Engineer",
     img: "/seyit.png",
   },
   {
-    title: "DevOps Engineer",
+    title: "Software Engineer",
     img: "/ayot.png",
   },
   {
-    title: "Content Creator",
+    title: "Integration Engineer",
     img: "/isaact.png",
   },
   {
-    title: "Project Manager",
+    title: "Software Engineer",
     img: "/akshatt.png",
   },
   {
-    title: "Project Manager",
+    title: "Software Engineer",
     img: "/lydiat.png",
   },
   {
@@ -48,7 +48,7 @@ const talents = [
     img: "/favourt.png",
   },
   {
-    title: "Project Manager",
+    title: "Quality Assurance Engineer",
     img: "/isaact2.png",
   },
   {

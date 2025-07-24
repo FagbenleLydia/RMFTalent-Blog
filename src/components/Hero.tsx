@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const phoneNumber = "+2349039846793";
 const handleBookCall = () => {
@@ -7,6 +8,12 @@ const handleBookCall = () => {
 };
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handlePackagesClick = () => {
+    navigate("../home/Packages"); // replace with your actual route
+  };
+
   return (
     <section className="relative overflow-hidden bg-[url('/hero-bg.svg')] bg-no-repeat bg-[#FAFAFA] bg-cover bg-center pt-16 pb-20">
       <div className="container mx-auto px-4">
@@ -37,7 +44,10 @@ const Hero: React.FC = () => {
                 <span className="mb-1">&gt;&gt;</span>
               </button>
 
-              <button className="min-w-[180px] text-[16px] sm:min-w-[200px] px-4 py-3.5 border border-[#211743] text-[#211743] rounded-lg hover:bg-gray-50 ">
+              <button
+                onClick={handlePackagesClick}
+                className="min-w-[180px] text-[16px] sm:min-w-[200px] px-4 py-3.5 border border-[#211743] text-[#211743] rounded-lg hover:bg-gray-50 "
+              >
                 See our packages
               </button>
             </div>

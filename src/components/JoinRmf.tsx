@@ -50,6 +50,19 @@ function JoinRmf() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (
+      !formData.fullName ||
+      !formData.email ||
+      !formData.expertise ||
+      !formData.portfolio ||
+      !formData.motivation ||
+      !formData.agreedToTerms
+    ) {
+      alert("⚠️ Please fill in all required fields and accept the terms.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -193,6 +206,7 @@ function JoinRmf() {
                 onChange={handleInputChange}
                 placeholder="Add your portfolio or profile link here"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 focus:outline-none transition-colors text-gray-900 placeholder-gray-500"
+                required
               />
             </div>
 
