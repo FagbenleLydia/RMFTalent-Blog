@@ -1,19 +1,13 @@
 import React from "react";
 import { SiTiktok } from "react-icons/si";
+import { useLocation } from "react-router-dom";
 
-import {
-  Facebook,
-  X,
-  Linkedin,
-  Instagram,
-  Music2,
-  Phone,
-  MapPin,
-  Mail,
-} from "lucide-react";
+import { X, Instagram, Phone, MapPin, Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
   const phoneNumber = "+2349039846793";
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   const handleBookCall = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, "")}`;
@@ -21,9 +15,7 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    // { Icon: Facebook, href: "https://facebook.com/rmftalents" },
     { Icon: X, href: "https://x.com/rmftalents?s=21" },
-    // { Icon: Linkedin, href: "https://linkedin.com/company/rmftalents" },
     {
       Icon: SiTiktok,
       href: "https://www.tiktok.com/@rmf_talents?_t=ZM-8wP5JdyfqUQ&_r=1",
@@ -32,8 +24,12 @@ const Footer: React.FC = () => {
       Icon: Instagram,
       href: "https://www.instagram.com/rmf_talents?igsh=dWJqYmVseHBmM293",
     },
-    // { Icon: Music2, href: "#" },
   ];
+
+  const linkStyle = (path: string) =>
+    currentPath === path
+      ? "text-white font-semibold"
+      : "text-gray-300 hover:text-white transition";
 
   return (
     <footer className="bg-[#211743] text-white relative z-10">
@@ -63,18 +59,32 @@ const Footer: React.FC = () => {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold mb-4 text-white">Quick links</h4>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm">
               <li>
-                <a href="/home">Home</a>
+                <a href="/home" className={linkStyle("/home")}>
+                  Home
+                </a>
               </li>
               <li>
-                <a href="/home/services">Services</a>
+                <a
+                  href="/home/services"
+                  className={linkStyle("/home/services")}
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <a href="/home/case-studies">Case Studies</a>
+                <a
+                  href="/home/case-studies"
+                  className={linkStyle("/home/case-studies")}
+                >
+                  Case Studies
+                </a>
               </li>
               <li>
-                <a href="/home/about">About RMF</a>
+                <a href="/home/about" className={linkStyle("/home/about")}>
+                  About RMF
+                </a>
               </li>
             </ul>
           </div>
@@ -82,23 +92,29 @@ const Footer: React.FC = () => {
           {/* Resources */}
           <div>
             <h4 className="font-semibold mb-4 text-white">Resources</h4>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href="/home/JoinRmf"
-                  className="text-left text-sm text-gray-300 hover:text-white block"
-                >
+                <a href="/home/JoinRmf" className={linkStyle("/home/JoinRmf")}>
                   Join RMFTalents
                 </a>
               </li>
               <li>
-                <a href="/home/about">Client Stories</a>
+                <a href="/home/about" className={linkStyle("/home/about")}>
+                  Client Stories
+                </a>
               </li>
               <li>
-                <a href="/home/about">Talent Stories</a>
+                <a
+                  href="/home/services"
+                  className={linkStyle("/home/services")}
+                >
+                  Talent Stories
+                </a>
               </li>
               <li>
-                <a href="/home/blogs">Blogs</a>
+                <a href="/home/blogs" className={linkStyle("/home/blogs")}>
+                  Blogs
+                </a>
               </li>
             </ul>
           </div>
@@ -122,7 +138,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Follow Us (now aligned in grid like others) */}
+          {/* Follow Us */}
           <div>
             <h4 className="font-semibold mb-4 text-white">Follow us</h4>
             <div className="flex items-center gap-3">

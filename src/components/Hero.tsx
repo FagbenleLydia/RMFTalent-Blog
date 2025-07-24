@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   const navigate = useNavigate();
 
   const handlePackagesClick = () => {
-    navigate("../home/Packages"); // replace with your actual route
+    navigate("/home/packages"); // ✅ fixed route (was capitalized)
   };
 
   return (
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
                 <span className="block">technical talent</span>
               </h1>
 
-              <p className="text-[20px] sm:text-xl text-[#727272]  max-w-2xl mx-auto lg:mx-0">
+              <p className="text-[20px] sm:text-xl text-[#727272] max-w-2xl mx-auto lg:mx-0">
                 Hire skilled designers, developers, and PMs through RMFTalents.
                 No hassle. Just great results.
               </p>
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-8 justify-center lg:justify-start">
               <button
                 onClick={handleBookCall}
-                className="min-w-[180px] sm:min-w-[200px] px-4 py-3.5 bg-[#A86CFF] text-[#ffffff] rounded-lg transition-all transform hover:scale-105 "
+                className="min-w-[180px] sm:min-w-[200px] px-4 py-3.5 bg-[#A86CFF] text-[#ffffff] rounded-lg transition-all transform hover:scale-105"
               >
                 <span className="mr-4 text-[16px]">Book a call</span>
                 <span className="mb-1">&gt;&gt;</span>
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
 
               <button
                 onClick={handlePackagesClick}
-                className="min-w-[180px] text-[16px] sm:min-w-[200px] px-4 py-3.5 border border-[#211743] text-[#211743] rounded-lg hover:bg-gray-50 "
+                className="min-w-[180px] text-[16px] sm:min-w-[200px] px-4 py-3.5 border border-[#211743] text-[#211743] rounded-lg hover:bg-gray-50"
               >
                 See our packages
               </button>

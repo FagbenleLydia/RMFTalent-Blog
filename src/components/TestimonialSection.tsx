@@ -5,22 +5,22 @@ const testimonials = [
   {
     quote:
       "I started as an intern and quickly leveled up thanks to RMF's real projects, supportive mentors, and structured feedback. Today, I'm contributing to MVP launches.",
-    name: "Raymond Harry",
-    role: "Project Manager",
+    name: "Joseph Isaac Ovie",
+    role: "QA Tester",
     experience: "3+ years experience",
   },
   {
     quote:
       "RMF helped me transition from a junior dev to leading product squads. The mentorship is unmatched.",
-    name: "Jessica Green",
-    role: "Software Engineer",
+    name: "Joseph Isaac",
+    role: "QA Tester",
     experience: "4+ years experience",
   },
   {
     quote:
       "Through RMF, I've worked on real MVPs with clear direction and feedback. My confidence has grown massively.",
-    name: "Tom Vincent",
-    role: "UI/UX Designer",
+    name: "Joseph Isaac",
+    role: "QA Tester",
     experience: "2+ years experience",
   },
 ];
