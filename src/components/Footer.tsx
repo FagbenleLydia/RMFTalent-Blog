@@ -1,8 +1,8 @@
 import React from "react";
-import { SiTiktok } from "react-icons/si";
-import { useLocation } from "react-router-dom";
+import { SiTiktok, SiX, SiInstagram } from "react-icons/si";
+import { useLocation, Link } from "react-router-dom";
 
-import { X, Instagram, Phone, MapPin, Mail } from "lucide-react";
+import { Instagram, Phone, MapPin, Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
   const phoneNumber = "+2349039846793";
@@ -15,13 +15,13 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { Icon: X, href: "https://x.com/rmftalents?s=21" },
+    { Icon: SiX, href: "https://x.com/rmftalents?s=21" },
     {
       Icon: SiTiktok,
       href: "https://www.tiktok.com/@rmf_talents?_t=ZM-8wP5JdyfqUQ&_r=1",
     },
     {
-      Icon: Instagram,
+      Icon: SiInstagram,
       href: "https://www.instagram.com/rmf_talents?igsh=dWJqYmVseHBmM293",
     },
   ];
@@ -61,30 +61,30 @@ const Footer: React.FC = () => {
             <h4 className="font-semibold mb-4 text-white">Quick links</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/home" className={linkStyle("/home")}>
+                <Link to="/home" className={linkStyle("/home")}>
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/home/services"
+                <Link
+                  to="/home/services"
                   className={linkStyle("/home/services")}
                 >
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/home/case-studies"
+                <Link
+                  to="/home/case-studies"
                   className={linkStyle("/home/case-studies")}
                 >
                   Case Studies
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/home/about" className={linkStyle("/home/about")}>
+                <Link to="/home/about" className={linkStyle("/home/about")}>
                   About RMF
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -94,27 +94,27 @@ const Footer: React.FC = () => {
             <h4 className="font-semibold mb-4 text-white">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/home/JoinRmf" className={linkStyle("/home/JoinRmf")}>
+                <Link to="/home/JoinRmf" className={linkStyle("/home/JoinRmf")}>
                   Join RMFTalents
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/home/about" className={linkStyle("/home/about")}>
+                <Link to="/home/about" className={linkStyle("/home/about")}>
                   Client Stories
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/home/services"
+                <Link
+                  to="/home/services"
                   className={linkStyle("/home/services")}
                 >
                   Talent Stories
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/home/blogs" className={linkStyle("/home/blogs")}>
+                <Link to="/home/blogs" className={linkStyle("/home/blogs")}>
                   Blogs
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

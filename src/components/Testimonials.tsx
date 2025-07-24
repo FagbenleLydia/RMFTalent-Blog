@@ -4,18 +4,16 @@ const Testimonials: React.FC = () => {
   // Top row testimonials (moving left)
   const topTestimonials = [
     {
-      text: "RMFTalents to our early-stage need something built fast and combination of real talent and cost-effective.",
-      name: "Thomas",
-      role: "Co-founder, LaunchFoundry",
-      image:
-        "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+      text: "RMFTalents made hiring effortless. We quickly found a highly skilled React Native developer who fit our team perfectly. The platform is fast, reliable, and saves us hours of screening.",
+      name: "Aditya Prasad",
+      role: "CEO, Vezos Digitals",
+      image: "/pasad.png",
     },
     {
-      text: "We tap into RMF's talent bench for monthly feature updates. Their developers are not only reliable, they deeply understand how startups work — deadlines, pivots, all of it.",
-      name: "Michael Tee",
-      role: "CTO, LearnHive",
-      image:
-        "https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg?auto=compress&cs=tinysrgb&w=400",
+      text: "RMFTalents helped us scale FastSails Technologies faster than we imagined. We onboarded top-tier developers in days, not weeks. It’s truly a game-changer for growing tech teams.",
+      name: "Tobi Adebisi",
+      role: "Founder, FastSails Technologies",
+      image: "/tobi.png",
     },
     {
       text: "I was skeptical about the hybrid model, but our assigned mentor ensured everything shipped to standard. It felt like we had a small in-house team without the overhead.",

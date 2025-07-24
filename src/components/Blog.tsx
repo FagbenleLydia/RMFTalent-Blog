@@ -123,7 +123,7 @@ const Blog: React.FC = () => {
                   <a
                     key={i}
                     href={a.link}
-                    target="_blank"
+                    target="_self"
                     rel="noopener"
                     className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-transform transform hover:scale-[1.02]"
                   >
@@ -196,7 +196,7 @@ const Blog: React.FC = () => {
                     <a
                       key={i}
                       href={a.link}
-                      target="_blank"
+                      target="_self"
                       rel="noopener"
                       className="min-w-full px-2 block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-transform transform hover:scale-[1.02]"
                     >

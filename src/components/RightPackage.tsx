@@ -1,9 +1,22 @@
 import React from "react";
+
 const phoneNumber = "+2349039846793";
+
 const handleBookCall = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, "")}`;
   window.open(whatsappUrl, "_blank");
 };
+
+const handlePackageInquiry = (packageName: string) => {
+  const whatsappUrl = `https://wa.me/${phoneNumber.replace(
+    /\D/g,
+    ""
+  )}?text=${encodeURIComponent(
+    `Hello, I'm interested in the *${packageName}* package. I'd love to learn more.`
+  )}`;
+  window.open(whatsappUrl, "_blank");
+};
+
 export default function RightPackage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
@@ -48,7 +61,10 @@ export default function RightPackage() {
                 <p className="text-gray-600 text-sm mb-6">
                   Ship a production-ready MVP or feature in 2-4 weeks
                 </p>
-                <button className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg font-medium transition-colors">
+                <button
+                  onClick={() => handlePackageInquiry("RMF SPRINT PACK")}
+                  className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg font-medium transition-colors"
+                >
                   Learn more →
                 </button>
               </div>
@@ -137,7 +153,10 @@ export default function RightPackage() {
                   Plug a vetted RMF engineer directly into your team,
                   month-to-month
                 </p>
-                <button className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg font-medium transition-colors">
+                <button
+                  onClick={() => handlePackageInquiry("RMF EMBEDDED")}
+                  className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg font-medium transition-colors"
+                >
                   Learn more →
                 </button>
               </div>
@@ -237,7 +256,10 @@ export default function RightPackage() {
                   <br />
                   product development.
                 </p>
-                <button className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg font-medium transition-colors">
+                <button
+                  onClick={() => handlePackageInquiry("RMF TECH SQUAD")}
+                  className="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-lg font-medium transition-colors"
+                >
                   Learn more →
                 </button>
               </div>

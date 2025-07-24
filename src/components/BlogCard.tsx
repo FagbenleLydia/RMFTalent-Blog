@@ -32,22 +32,22 @@ const BlogCard: React.FC<BlogCardProps> = ({ article, onClick }) => {
       {/* Content */}
       <div className="flex flex-col flex-grow p-6 pb-8">
         {/* Date */}
-        <p className="text-sm text-slate-500 mb-2 font-medium">
+        <p className="text-[12px] text-[#393642] mb-2 font-medium">
           {article.date}
         </p>
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-slate-900 mb-3 leading-tight line-clamp-2">
+        <h3 className="text-[16px] font-bold text-[#211743] mb-3 leading-tight line-clamp-2">
           {article.title}
         </h3>
 
         {/* Description */}
-        <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
+        <p className="text-[#393642] text-[12px] leading-relaxed mb-6 line-clamp-3">
           {article.description}
         </p>
 
         {/* Read More Link */}
-        <div className="mt-auto flex items-center text-blue-600 font-medium text-sm">
+        <div className="mt-auto flex items-center text-[#AD75FF] font-medium text-[12px]">
           <span className="mr-2">Read Article</span>
           <ArrowRight className="w-4 h-4" />
         </div>

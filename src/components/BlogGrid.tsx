@@ -120,9 +120,9 @@ const BlogGrid: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen  bg-[#FAFAFA]">
       {/* Header Section */}
-      <div className="bg-white">
+      <div className="bg-[#FAFAFA]">
         <div className="max-w-6xl mx-auto px-6 py-20">
           <div className="max-w-2xl">
             <h1 className="text-[36px] sm:text-[48px] font-bold text-[#211743] mb-4 leading-tight">
