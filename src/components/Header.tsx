@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom"; // 👈 useLocation
+import { Link, useLocation } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const phoneNumber = "+2349039846793";
-
   const { pathname } = useLocation();
 
   const isActive = (path: string) =>
@@ -73,16 +72,14 @@ const Header: React.FC = () => {
             >
               About
             </Link>
-            <Link
-              to="/home/blogs"
-              className={`transition-colors font-light ${
-                isActive("/home/blogs")
-                  ? "text-[#AD75FF] font-medium"
-                  : "text-[#211743] hover:text-[#AD75FF]"
-              }`}
+
+            {/* 🔁 Replaced "Blogs" with external link */}
+            <a
+              href="https://blog.rmftalents.com/"
+              className="transition-colors font-light text-[#211743] hover:text-[#AD75FF]"
             >
               Blogs
-            </Link>
+            </a>
           </nav>
 
           {/* Desktop CTAs */}
@@ -169,17 +166,15 @@ const Header: React.FC = () => {
               >
                 About
               </Link>
-              <Link
-                to="/home/blogs"
-                className={`py-2 px-4 rounded-lg font-medium transition-colors ${
-                  isActive("/home/blogs")
-                    ? "bg-purple-100 text-purple-700"
-                    : "text-gray-700 hover:text-purple-600 hover:bg-purple-50"
-                }`}
-                onClick={() => setIsMenuOpen(false)}
+
+              {/* 🔁 Replaced Blog link with external a tag */}
+              <a
+                href="https://blog.rmftalents.com/"
+                className="py-2 px-4 rounded-lg font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors"
               >
                 Blogs
-              </Link>
+              </a>
+
               <Link
                 to="/home/JoinRmf"
                 onClick={() => setIsMenuOpen(false)}
