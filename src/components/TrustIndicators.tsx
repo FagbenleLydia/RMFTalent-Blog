@@ -2,9 +2,9 @@ import React from "react";
 
 const TrustIndicators: React.FC = () => {
   const logos = [
+    "/que.png",
     "/logos/dexhub.svg",
-    "/logos/fastsail.svg",
-    "/logos/dexhub.svg",
+    "/sneaker2.png",
     "/logos/fastsail.svg",
   ];
 

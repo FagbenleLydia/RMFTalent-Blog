@@ -2,7 +2,7 @@ import React from "react";
 import { SiTiktok, SiX, SiInstagram } from "react-icons/si";
 import { useLocation, Link } from "react-router-dom";
 
-import { Instagram, Phone, MapPin, Mail } from "lucide-react";
+import { Phone, MapPin, Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
   const phoneNumber = "+2349039846793";
@@ -112,9 +112,12 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/home/blogs" className={linkStyle("/home/blogs")}>
+                <a
+                  href="https://blog.rmftalents.com/"
+                  className={linkStyle("https://blog.rmftalents.com/")}
+                >
                   Blogs
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -161,10 +164,16 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
           <p>© 2021 All Rights Reserved</p>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-white transition">
+            <a
+              href="https://blog.rmftalents.com/privacy-policy/"
+              className="hover:text-white transition"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition">
+            <a
+              href="https://blog.rmftalents.com/terms-of-use/"
+              className="hover:text-white transition"
+            >
               Terms of Use
             </a>
             <a href="#" className="hover:text-white transition">
