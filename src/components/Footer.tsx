@@ -162,7 +162,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Footer */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-4">
-          <p>© 2021 All Rights Reserved</p>
+          <p>© 2025 All Rights Reserved</p>
           <div className="flex space-x-6">
             <a
               href="https://blog.rmftalents.com/privacy-policy/"
